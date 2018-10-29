@@ -12,15 +12,15 @@ import model.Person;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
-public class LambdaMain implements RequestHandler<String,List<Person>> {
+public class LambdaMain implements RequestHandler<Map<String,Object>,List<Person>> {
 
-    public List<Person> handleRequest(String s, Context context) {
+    public List<Person> handleRequest(Map<String,Object> input, Context context) {
 
         final AmazonDynamoDB ddb = AmazonDynamoDBClientBuilder.defaultClient();
         final DynamoDBMapper mapper = new DynamoDBMapper(ddb);
         List<Person> personList = null;
-        final DynamoDB dynamoDB = new DynamoDB(ddb);
         try {
             personList = mapper.scan(Person.class, new DynamoDBScanExpression());
         } catch (Exception e) {
