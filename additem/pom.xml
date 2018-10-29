@@ -6,7 +6,7 @@
 
     <groupId>com.webischia</groupId>
     <artifactId>lambdaadditem</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <version>1.0</version>
 
 
