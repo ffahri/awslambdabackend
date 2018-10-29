@@ -6,7 +6,9 @@
 
     <groupId>com.webischia</groupId>
     <artifactId>lambdaadditem</artifactId>
+    <packaging>pom</packaging>
     <version>1.0</version>
+
 
 
     <dependencies>
@@ -44,6 +46,7 @@
     <build>
         <plugins>
             <plugin>
+                <!--   lambda shade otherwise wont select class     -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>2.3</version>
